@@ -5,7 +5,7 @@
 // @description     Control the speed of the gleam.io timer
 // @version         1.0
 // @original-author Cangshi
-// @editor			Saulios for r/FreeGameFindings
+// @editor          Saulios for r/FreeGameFindings
 // @downloadURL     https://raw.githubusercontent.com/Saulios/gleam_timer/main/gleam_timer.js
 // @updateURL       https://raw.githubusercontent.com/Saulios/gleam_timer/main/gleam_timer.js
 // @run-at          document-start
