@@ -7,6 +7,9 @@ There will be a circle in the top left corner of the page with the text x1. You 
 A pop-up message will appear. Here you can set how fast the time for the tasks should go.
 The default setting is 1, which is the normal time. Recommended time multiplier: 1000 (1000 times faster)
 
+This file has been minified to make it load faster, you can find the non-minified version here:
+https://raw.githubusercontent.com/Saulios/gleam_timer/main/gleam_timer_beautified.js
+
 Updated: November 14, 2021
 */
 
