@@ -1,16 +1,14 @@
-// ==UserScript==
-// @name            Gleam.io timer control
-// @icon            https://js.gleam.io/favicon.ico
-// @match           *gleam.io/*
-// @description     Control the speed of the gleam.io timer
-// @version         1.0
-// @original-author Cangshi
-// @editor          Saulios for r/FreeGameFindings
-// @downloadURL     https://raw.githubusercontent.com/Saulios/gleam_timer/main/gleam_timer.js
-// @updateURL       https://raw.githubusercontent.com/Saulios/gleam_timer/main/gleam_timer.js
-// @run-at          document-start
-// @grant           none
-// ==/UserScript==
+/*
+Paste the total contents of this file (Ctrl + A and Ctrl + C) into your browser console (F12 or Ctrl + Shift + J)
+when you are on an Gleam.io page.
+
+This can be used to speed up the timer on Gleam.io tasks. You can instantly complete any task related to time without waiting.
+There will be a circle in the top left corner of the page with the text x1. You can click on it or press Control + 1 on your keyboard.
+A pop-up message will appear. Here you can set how fast the time for the tasks should go.
+The default setting is 1, which is the normal time. Recommended time multiplier: 1000 (1000 times faster)
+
+Updated: November 14, 2021
+*/
 
 ! function (t, e) {
 	"object" == typeof exports && "undefined" != typeof module ? module.exports = e() : "function" == typeof define && define.amd ? define(e) : (t = "undefined" != typeof globalThis ? globalThis : t || self).$hookTimer = e()
@@ -1977,82 +1975,6 @@
 			return u(this, n)
 		}
 	}
-	var $t = function (e) {
-		o(i, e);
-		var r = Yt(i);
-
-		function i() {
-			return t(this, i), r.apply(this, arguments)
-		}
-		return n(i, [{
-			key: "onRateChange",
-			value: function (t) {
-				B(c(i.prototype), "onRateChange", this).call(this, t);
-				var e, n = Gt(this.allVideoElements);
-				try {
-					for (n.s(); !(e = n.n()).done;) {
-						var r = e.value;
-						this.changePlaybackRate(r, t)
-					}
-				} catch (t) {
-					n.e(t)
-				} finally {
-					n.f()
-				}
-			}
-		}, {
-			key: "init",
-			value: function () {
-				this.preventPlaybackRateLock()
-			}
-		}, {
-			key: "changePlaybackRate",
-			value: function (t, e) {
-				e = e >= 16 ? 16 : e <= .065 ? .065 : e, this.unlockPlaybackRate(t), t.playbackRate = e, 1 !== e && this.lockPlaybackRate(t)
-			}
-		}, {
-			key: "lockPlaybackRate",
-			value: function (t) {
-				var e = (this.definitionModule || {}).definePropertyOrigin;
-				(void 0 === e ? Object.defineProperty : e).call(Object, t, "playbackRate", {
-					configurable: !0,
-					get: function () {
-						return 1
-					},
-					set: function () {}
-				})
-			}
-		}, {
-			key: "unlockPlaybackRate",
-			value: function (t) {
-				delete t.playbackRate, delete t.playbackRate, delete t.playbackRate
-			}
-		}, {
-			key: "definitionModule",
-			get: function () {
-				return this.getDependencyModule("definition")
-			}
-		}, {
-			key: "preventPlaybackRateLock",
-			value: function () {
-				var t = this.definitionModule;
-				t ? t.applyDefineRole((function (t) {
-					if (t.target instanceof HTMLVideoElement && "playbackRate" === t.key) return P("Locking of the video playback rate has been prevented"), !0
-				})) : P("`Video Speed Module`, dependency: `definition` module is required.")
-			}
-		}, {
-			key: "allVideoElements",
-			get: function () {
-				var t = this.getDependencyModule("shadowDOM");
-				return t || P("`Video Speed Module`, dependency: `shadowDOM` module is required."), [].concat(Wt(t ? t.querySelectorAll("video") : []), Wt(this.document.querySelectorAll("video")))
-			}
-		}, {
-			key: "moduleIdentityName",
-			get: function () {
-				return "videoSpeed"
-			}
-		}]), i
-	}(U);
 
 	function Kt(t) {
 		var e = function () {
@@ -2334,5 +2256,5 @@
 			}]), a
 		}(H),
 		te = new F;
-	return te.exportOuter(), te.registerModule(new Jt(new Qt)), te.registerModule(new Ht), te.registerModule(new It), te.registerModule(new Et), te.registerModule(new $t), te.registerModule(new Nt, !0), te.registerModule(new Zt, !0), te.bootstrap(), te
+	return te.exportOuter(), te.registerModule(new Jt(new Qt)), te.registerModule(new Ht), te.registerModule(new It), te.registerModule(new Et), te.registerModule(new Nt, !0), te.registerModule(new Zt, !0), te.bootstrap(), te
 }));
